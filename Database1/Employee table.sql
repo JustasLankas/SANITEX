@@ -1,0 +1,12 @@
+﻿CREATE TABLE [dbo].[Employees]
+(
+UserID INT NOT NULL IDENTITY(1,1),
+First_name VARCHAR(50) NOT NULL,
+Last_name VARCHAR(50) NOT NULL,
+DOB DATETIME NOT NULL,
+Insert_Dtm DATETIME NOT NULL DEFAULT(getdate()),
+CONSTRAINT PK_User PRIMARY KEY CLUSTERED (UserID asc),
+CONSTRAINT UC_Person UNIQUE (First_name,Last_name,DOB)
+)
+go
+
